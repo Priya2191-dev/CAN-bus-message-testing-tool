@@ -1,0 +1,5 @@
+python-can
+cantools
+pytest
+pytest-cov
+behave
