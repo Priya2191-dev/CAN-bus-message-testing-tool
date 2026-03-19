@@ -1,5 +1,5 @@
 from behave import given, when, then
-from src.dbc_decoder import decode_message
+from dbc_decoder import decode_message
 
 @given('a valid DBC file')
 def step_dbc(context):
