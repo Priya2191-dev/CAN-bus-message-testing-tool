@@ -28,7 +28,6 @@ pip install -r requirements.txt
 ## Demo
 
 Open in google collab
-...
 
 ## Usage
 
