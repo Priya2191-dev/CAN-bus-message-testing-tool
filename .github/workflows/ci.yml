@@ -1,4 +1,4 @@
-name: ADAS Automation CI Pipeline
+name: CAN Bus Message Testing CI Pipeline
 
 on:
   push:
