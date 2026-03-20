@@ -10,14 +10,31 @@ automotive systems.
 
 ## Features
 
--   CAN Message Simulation
--   ECU Data Validation
--   Message Integrity Testing
--   DBC-Based CAN Decoding
--   CAN Log Replay Testing
--   Automated ECU Fault Injection
+-   CAN Message Simulation:
 
-## Installation
+    It validates message flow, timing behaviour, integration logic.
+    
+-   ECU Data Validation:
+
+    Ensures parameters such as speed, RPM or temperature remains within acceptable limits.
+    
+-   Message Integrity Testing:
+
+    Identify transmission error and maintain system reliability.
+    
+-   DBC-Based CAN Decoding:
+
+    Decodes raw CAN messages into human readable signals using DBC database.
+    
+-   CAN Log Replay Testing:
+
+    Replays recorded CAN traffic logs to simulate real world driving scenarios.
+    
+-   Automated ECU Fault Injection:
+
+    Introduces control fault into CAN messages to check ECU robustness and to validate fault tolerance & safety mechanisms.
+    
+## Installations
 
 git clone https://github.com/Priya2191-dev/CAN-bus-message-testing-tool.git
 
@@ -31,13 +48,13 @@ Run the CAN bus testing tool demo
 
 [Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/CAN-bus-message-testing-tool/blob/main/notebook/Can-bus-testing-tool.ipynb)
 
-## Tests
+## Testing
 
 - Auomation Testing (Pytest + BDD)
 
 - CI/CD Integration
 
-## Usage
+## Usages
 
 Run tests:
 
