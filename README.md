@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 Run the CAN bus testing tool demo
 
-[Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/CAN-bus-message-testing-tool/blob/main/notebook/Can-bus-testing-tool.ipynb)
+[Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/CAN-bus-message-testing-tool/blob/main/notebook/CAN-bus-message-testing-tool.ipynb)
 
 ## Testing
 
