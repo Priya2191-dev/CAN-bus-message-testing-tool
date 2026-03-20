@@ -20,7 +20,9 @@ automotive systems.
 ## Installation
 
 git clone https://github.com/Priya2191-dev/CAN-bus-message-testing-tool.git
+
 cd CAN-bus-message-testing-tool
+
 pip install -r requirements.txt
 
 ## Interactive Simulation Demo
