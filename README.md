@@ -31,17 +31,17 @@ Run the CAN bus testing tool demo
 
 ## Tests
 
-Auomation Testing (Pytest + BDD)
+- Auomation Testing (Pytest + BDD)
 
-CI/CD Integration
+- CI/CD Integration
 
 ## Usage
 
 Run tests:
 
-pytest
+- pytest
 
-behave
+- behave
 
 ## CI/CD
 
