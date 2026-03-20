@@ -17,26 +17,39 @@ automotive systems.
 -   CAN Log Replay Testing
 -   Automated ECU Fault Injection
 
+## Project Structure
+
+CAN-bus-message-testing-tool/
+│── src/
+│   ├── speed_monitor.py
+│   ├── engine_temp.py
+│   ├── brake_pressure.py
+│   ├── visualization.py
+│   ├── anomaly_detection.py
+│   ├── api.py
+│── tests/
+│   ├── test_speed.py
+│── requirements.txt
+│── README.md
+
 ## Installation
 
-``` bash
-git clone https://github.com/your-username/can-bus-testing-tool.git
-cd can-bus-testing-tool
+git clone https://github.com/Priya2191-dev/CAN-bus-message-testing-tool.git
+cd CAN-bus-message-testing-tool
 pip install -r requirements.txt
-```
 
-## Demo
+## Interactive Simulation Demo
 
-Open in google collab
+Run the CAN bus testing tool demo
+
+[Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/CAN-bus-message-testing-tool/notebook/Can-bus-testing-tool.ipynb)
 
 ## Usage
 
 Run tests:
 
-``` bash
 pytest
 behave
-```
 
 ## CI/CD
 
