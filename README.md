@@ -29,11 +29,18 @@ Run the CAN bus testing tool demo
 
 [Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/CAN-bus-message-testing-tool/blob/main/notebook/Can-bus-testing-tool.ipynb)
 
+## Tests
+
+Auomation Testing (Pytest + BDD)
+
+CI/CD Integration
+
 ## Usage
 
 Run tests:
 
 pytest
+
 behave
 
 ## CI/CD
