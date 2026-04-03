@@ -1,19 +1,53 @@
 from behave import given, when, then
-from dbc_decoder import decode_message
+import os
+from dbc_decoder import decode_message, DBC_FILE
+
 
 @given('a valid DBC file')
 def step_dbc(context):
-    pass
+    context.skip = False
+    if not os.path.exists(DBC_FILE):
+        context.skip = True
 
 @when('I decode a CAN message')
-def step_decode(context):
+def step_decode_default(context):
+    if context.skip:
+        return
+
+    context.result = decode_message()
+
+@when('I decode a CAN message with data {data}')
+def step_decode_custom(context, data):
+    if context.skip:
+        return
+
+    data_list = [int(x) for x in data.split(",")]
+    context.result = decode_message(data=data_list)
+
+@when('I decode using an invalid DBC file')
+def step_invalid_dbc(context):
+    context.error = None
     try:
-        context.result = decode_message()
-    except Exception:
-        context.result = None
+        decode_message(dbc_path="invalid.dbc")
+    except Exception as e:
+        context.error = e
 
 @then('I should get decoded signals')
-def step_result(context):
-    if context.result is None:
-        return  # Skip safely in CI
+def step_validate_result(context):
+    if context.skip:
+        return
+
+    assert context.result is not None
     assert isinstance(context.result, dict)
+
+@then('decoded signals should not be empty')
+def step_validate_non_empty(context):
+    if context.skip:
+        return
+
+    assert context.result is not None
+    assert len(context.result) > 0
+
+@then('decoding should fail')
+def step_validate_failure(context):
+    assert context.error is not None
