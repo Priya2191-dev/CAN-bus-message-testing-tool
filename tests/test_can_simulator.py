@@ -1,3 +1,4 @@
+import pytest
 import can
 from can_simulator import get_bus, create_message, send_message, receive_message
 
