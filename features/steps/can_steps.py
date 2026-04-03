@@ -3,13 +3,13 @@ import time
 from can_simulator import get_bus, create_message, send_message, receive_message
 
 @given('a virtual CAN bus')
-def step_bus(context):
+def given_bus(context):
     # Separate TX and RX buses
     context.bus_tx = get_bus()
     context.bus_rx = get_bus()
 
 @when('I send a CAN message with ID {arb_id} and data {data}')
-def step_send(context, arb_id, data):
+def when_send(context, arb_id, data):
     arb_id_int = int(arb_id, 16)
     data_list = [int(x) for x in data.split(",")]
 
@@ -28,11 +28,11 @@ def step_send(context, arb_id, data):
             break
 
 @when('I do not send any CAN message')
-def step_no_send(context):
+def when_no_send(context):
     context.received = receive_message(context.bus_rx, timeout=1)
 
 @then('I should receive the same CAN message')
-def step_validate_same(context):
+def then_validate_same(context):
     try:
         assert context.received is not None, "No CAN message received"
 
@@ -45,7 +45,7 @@ def step_validate_same(context):
         context.bus_rx.shutdown()
 
 @then('the received CAN message should match ID {arb_id} and data {data}')
-def step_validate_specific(context, arb_id, data):
+def then_validate_specific(context, arb_id, data):
     try:
         arb_id_int = int(arb_id, 16)
         data_list = [int(x) for x in data.split(",")]
@@ -59,7 +59,7 @@ def step_validate_specific(context, arb_id, data):
         context.bus_rx.shutdown()
 
 @then('no CAN message should be received')
-def step_validate_none(context):
+def then_validate_none(context):
     try:
         assert context.received is None
     finally:
