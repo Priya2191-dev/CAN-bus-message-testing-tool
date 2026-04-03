@@ -1,5 +1,6 @@
 import can
 import logging
+import time
 
 logging.basicConfig(level=logging.INFO)
 
@@ -8,7 +9,7 @@ BUSTYPE = "virtual"
 
 def get_bus():
     """Create and return a virtual CAN bus"""
-    return can.interface.Bus(interface=BUSTYPE, channel=CHANNEL)
+    return can.interface.Bus(interface='virtual', channel='test')
 
 def create_message(arbitration_id=0x123, data=None):
     """Create a CAN message"""
@@ -32,8 +33,9 @@ def send_message(bus, msg):
         return False
 
 def receive_message(bus, timeout=2):
-    """Receive a CAN message"""
-    msg = bus.recv(timeout=timeout)
-    if msg:
-        logging.info(f"Message received: ID={hex(msg.arbitration_id)}, DATA={list(msg.data)}")
-    return msg
+    start = time.time()
+    while time.time() - start < timeout:
+        msg = bus.recv(timeout=0.2)
+        if msg:
+            return msg
+    return None
