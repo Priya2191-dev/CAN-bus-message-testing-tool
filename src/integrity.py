@@ -2,12 +2,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
+
 def checksum(data):
-    """
-    Calculate checksum (1-byte)
-    :param data: list of integers
-    :return: checksum value (0-255)
-    """
     if not isinstance(data, list):
         raise TypeError("Data must be a list")
 
@@ -19,10 +15,11 @@ def checksum(data):
 def verify(data, expected_checksum):
     """
     Verify data integrity using checksum
-    :param data: list of integers
-    :param expected_checksum: checksum to validate against
-    :return: True if valid, False otherwise
     """
+    
+    if not isinstance(expected_checksum, int):
+        raise TypeError("Expected checksum must be an integer")
+
     calculated = checksum(data)
 
     logging.info(f"Calculated: {calculated}, Expected: {expected_checksum}")
