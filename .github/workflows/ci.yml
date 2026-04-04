@@ -1,4 +1,4 @@
-name: Vehicle Brake Automation CI Pipeline
+name: CAN Bus Message Testing Tool CI Pipeline
 
 on:
   push:
