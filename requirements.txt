@@ -1,5 +1,6 @@
-python-can
-cantools
 pytest
 pytest-cov
 behave
+allure-pytest
+python-can
+cantools
