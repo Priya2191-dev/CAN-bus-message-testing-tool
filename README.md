@@ -1,7 +1,10 @@
 # 🚗 CAN Bus Message Testing Tool
 
-A comprehensive Python-based automation framework for validating ECU
-communication over CAN networks.
+## Objective
+
+A comprehensive Python-based automation framework for validating CAN (Control Area Network) communication, including message simulation, ECU validation, fault injection, integrity checks, DBC decoding and log replay.
+
+This project demonsrates end-to-end automotive testing practices using pytest, BDD (behave) and CI/CD pipelines.
 
 ## Overview
 
@@ -12,27 +15,39 @@ automotive systems.
 
 -   CAN Message Simulation:
 
-    It validates message flow, timing behaviour, integration logic.
+    Simulate CAN messages using virtual CAN bus.
+
+    Validate message transmission and reception.
     
 -   ECU Data Validation:
 
-    Ensures parameters such as speed, RPM or temperature remains within acceptable limits.
-    
--   Message Integrity Testing:
+    Validate ECU parameters like speed.
 
-    Identify transmission error and maintain system reliability.
+    Boundary and negative testing
     
--   DBC-Based CAN Decoding:
+-   Fault Injection:
 
-    Decodes raw CAN messages into human readable signals using DBC database.
+    Inject faults into CAN payload.
+
+    Simulate real world sensor/data corruption.
     
--   CAN Log Replay Testing:
+-   Message Integrity:
 
-    Replays recorded CAN traffic logs to simulate real world driving scenarios.
+    Checksum based integrity validation.
+
+    Detect corrupted CAN data.
     
--   Automated ECU Fault Injection:
+-   DBC Decoding:
 
-    Introduces control fault into CAN messages to check ECU robustness and to validate fault tolerance & safety mechanisms.
+    Decode CAN messages using DBC file.
+
+    Extract signal level information.
+    
+-   CAN Log Replay:
+
+    Replay recorded CAN logs.
+
+    Useful for debugging and simulation.
     
 ## Installations
 
@@ -42,36 +57,41 @@ cd CAN-bus-message-testing-tool
 
 pip install -r requirements.txt
 
-## Interactive Simulation Demo
+## Tech Stack
 
-Run the CAN bus testing tool demo
+- Language: Python
+- Testing: Pytest, Behave(BDD)
+- CI/CD: Github Actions
+- Library: Cantools
+- Reporting: Allure Reports
 
-[Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/CAN-bus-message-testing-tool/blob/main/notebook/CAN-bus-message-testing-tool.ipynb)
+## Testing Strategy
 
-## Testing
+- Unit Testing using pytest
+- Behavior-Driven Testing using Behave
+- Edge Case Handling
+- Negative Scenario
 
-- Auomation Testing (Pytest + BDD)
+## CI/CD Pipeline
 
-- CI/CD Integration
+- Runs on every push & pull request.
+- Executes:
 
-## Usages
+  Pytest(Unit tests)
 
-Run tests:
+  Behave(BDD tests)
 
-- pytest
+- Generates:
 
-- behave
+  Allure reports
 
-## CI/CD
+  Coverage reports
 
-GitHub Actions pipeline runs pytest and behave automatically.
+## Reports & Outputs
 
-## Technologies
-
--   python-can
--   cantools
--   pytest
--   behave
+- Allure Test Reports
+- Behave Execution Logs
+- Coverage Report
 
 ## Author
 
