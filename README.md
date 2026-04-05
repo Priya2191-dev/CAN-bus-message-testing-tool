@@ -93,6 +93,10 @@ pip install -r requirements.txt
 - Behave Execution Logs
 - Coverage Report
 
+## Conclusion
+
+I have successfully built a CAN bus automation frameworknwith Pytest, BDD and CI/CD covering simulation, fault injection, integrity validation and log replay for real world automotive testing scenarios.
+
 ## Author
 
 Priyanka Lale
